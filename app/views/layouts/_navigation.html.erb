@@ -1,0 +1,35 @@
+<%= link_to "OPC", root_path, :class => 'brand' %>
+<ul class="nav">
+  <% if user_signed_in? %>
+    <li>
+    <%= link_to 'Logout', main_app.destroy_user_session_path, :method=>'delete' %>        
+    </li>
+    <li>
+    <%= link_to 'Forum', main_app.forem_path %>        
+    </li>
+  <% else %>
+    <li>
+    <%= link_to 'Login', main_app.new_user_session_path %>  
+    </li>
+  <% end %>
+  <% if user_signed_in? %>
+    <li>
+    <%= link_to 'Edit account', main_app.edit_user_registration_path %>
+    </li>
+    <% if current_user.has_role? :admin %>
+      <li>
+      <%= link_to 'Admin', main_app.users_path %>
+      </li>
+    <% end %>
+    <% if current_user.forem_admin %>
+    <li>
+         <%= link_to "Administrate", forem.admin_root_url %>
+         </li>
+    <% end %>
+  <% else %>
+    <li>
+    <%= link_to 'Sign up', main_app.new_user_registration_path %>
+    </li>
+  <% end %>
+</ul>
+
