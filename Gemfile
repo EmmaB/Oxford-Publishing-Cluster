@@ -22,3 +22,4 @@ gem "simple_form", ">= 2.0.3"
 gem "quiet_assets", ">= 1.0.1", :group => :development
 gem 'forem', :git => "git://github.com/radar/forem.git"
 gem 'will_paginate', '3.0.3'
+gem 'forem-theme-twist', :git => "git://github.com/radar/forem-theme-twist.git"
